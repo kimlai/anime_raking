@@ -26,6 +26,10 @@ Route::get('/anime/{id}', function ($id) {
   return view('anime', ["anime" => $anime]);
 });
 
+Route::get('/anime/{id}/new_review', function ($id) {
+  return view('new_review');
+});
+
 Route::get('/login', function () {
   return view('login');
 });

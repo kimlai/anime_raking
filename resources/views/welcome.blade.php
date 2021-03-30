@@ -1,33 +1,17 @@
-<!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Anime ranking</title>
-  </head>
-  <body>
-    @auth
-      {{ Auth::user()->username }}
-      <form action="/signout" method="POST">
-        @csrf
-        <button>Se déconnecter</button>
-      </form>
-    @endauth
-    @guest
-      <a href="/login">Se connecter</a>
-      <a href="/signup">Créer un compte</a>
-    @endguest
-
-    <main>
-      <ul>
-        @foreach($animes as $anime)
-          <li>
-            {{ $anime->title }}
+<x-layout>
+  <ul role="list" class="anime-list">
+    @foreach($animes as $anime)
+      <li class="flow">
+        <div class="flow">
+          <div>
             <img alt="" src="/covers/{{ $anime->cover }}" />
-            <a href="/anime/{{ $anime->id }}">Voir</a>
-          </li>
-        @endforeach
-      </ul>
-    </main>
-  </body>
-</html>
+          </div>
+          <h2>
+            {{ $anime->title }}
+          </h2>
+        </div>
+        <a class="cta" href="/anime/{{ $anime->id }}">Voir</a>
+      </li>
+    @endforeach
+  </ul>
+</x-layout>
