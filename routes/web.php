@@ -61,3 +61,10 @@ Route::post('signup', function (Request $request) {
 
   return redirect('/');
 });
+
+Route::post('signout', function (Request $request) {
+  Auth::logout();
+  $request->session()->invalidate();
+  $request->session()->regenerateToken();
+  return redirect('/');
+});

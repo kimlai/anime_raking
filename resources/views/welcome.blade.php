@@ -8,6 +8,10 @@
   <body>
     @auth
       {{ Auth::user()->username }}
+      <form action="/signout" method="POST">
+        @csrf
+        <button>Se déconnecter</button>
+      </form>
     @endauth
     @guest
       <a href="/login">Se connecter</a>
