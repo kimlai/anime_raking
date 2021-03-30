@@ -4,18 +4,22 @@
   </x-slot>
 
   <article class="anime">
-    <header>
+    <header class="anime--header">
       <div>
         <img alt="" src="/covers/{{ $anime->cover }}" />
       </div>
       <h1>{{ $anime->title }}</h1>
     </header>
     <p>{{ $anime->description }}</p>
-    <div class="flow">
-      <div>
-        <a class="cta" href="/anime/{{ $anime->id }}/new_review">Ajouter une critique</a>
+    <div>
+      <div class="actions">
+        <div>
+          <a class="cta" href="/anime/{{ $anime->id }}/new_review">Écrire une critique</a>
+        </div>
+        <form action="/anime/{{ $anime->id }}/add_to_watch_list" method="POST">
+          <button class="cta">Ajouter à ma watchlist</button>
+        </form>
       </div>
-      <p>Il n'y a pas encore de critiques</p>
     </div>
   </article>
 </x-layout>

@@ -64,11 +64,24 @@ select {
  * APP STYLES
  **************/
 
+:root {
+    font-family: "Open Sans", sans-serif;
+}
+
+h1,
+h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+}
+
 .flow > * + * {
     margin-top: 1rem;
 }
 
-header {
+header.topnav {
+    border-bottom: 1px solid #ccc;
+}
+header.topnav .inner {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -80,6 +93,7 @@ header {
 .logo {
     text-decoration: none;
     color: inherit;
+    font-family: "Poppins", sans-serif;
 }
 
 nav {
@@ -90,6 +104,18 @@ nav {
 
 nav > * {
     margin: 1rem;
+}
+
+nav a {
+    color: inherit;
+    text-decoration: none;
+}
+
+nav button {
+    background: none;
+    border: none;
+    color: black;
+    cursor: pointer;
 }
 
 main {
@@ -120,7 +146,16 @@ main {
     font-size: 1.1rem;
 }
 
+.anime .actions {
+    display: flex;
+    margin: -1rem;
+}
+.anime .actions > * {
+    margin: 1rem;
+}
+
 .cta {
+    cursor: pointer;
     border: 2px solid;
     text-align: center;
     padding: 0.25rem;
@@ -129,10 +164,16 @@ main {
     padding: 0.5rem 1rem;
     color: inherit;
     box-shadow: 0.25rem 0.25rem 0 black;
+    background: white;
 }
 
 article > * + * {
     margin-top: 4rem;
+}
+
+.anime h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
 }
 
 .anime img {
@@ -142,10 +183,45 @@ article > * + * {
     box-shadow: 0.25rem 0.25rem 0 black;
 }
 
-.anime header {
+.anime--header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     justify-content: flex-start;
+    flex-wrap: nowrap;
 }
 
 .anime p {
     max-width: 65ch;
+}
+
+.signup h1,
+.login h1 {
+    margin-bottom: 3rem;
+}
+
+label,
+input {
+    display: block;
+}
+
+input {
+    background: none;
+    border: 2px solid;
+    padding: 0.25rem;
+}
+
+.login form > * + *,
+.signup form > * + * {
+    margin-top: 1.5rem;
+}
+
+.input-group > * + * {
+    margin-top: 0.5rem;
+}
+
+.signup,
+.login {
+    display: grid;
+    place-items: center;
 }
