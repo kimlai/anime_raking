@@ -10,7 +10,8 @@
       {{ Auth::user()->username }}
     @endauth
     @guest
-      Guest
+      <a href="/login">Se connecter</a>
+      <a href="/signup">Créer un compte</a>
     @endguest
 
     <main>
@@ -19,6 +20,7 @@
           <li>
             {{ $anime->title }}
             <img alt="" src="/covers/{{ $anime->cover }}" />
+            <a href="/anime/{{ $anime->id }}">Voir</a>
           </li>
         @endforeach
       </ul>

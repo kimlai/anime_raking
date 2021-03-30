@@ -21,6 +21,11 @@ Route::get('/', function () {
   return view('welcome', ["animes" => $animes]);
 });
 
+Route::get('/anime/{id}', function ($id) {
+  $anime = DB::select("SELECT * FROM animes WHERE id = ?", [$id])[0];
+  return view('anime', ["anime" => $anime]);
+});
+
 Route::get('/login', function () {
   return view('login');
 });

@@ -19,4 +19,8 @@
   @enderror
 
   <button>Créer un compte</button>
+
+  <div>
+    Vous avez déjà un compte ? <a href="/login">Connectez-vous</a>
+  </div>
 </form>

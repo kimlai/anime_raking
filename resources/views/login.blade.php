@@ -11,4 +11,8 @@
     <p class="error">{{ $message }}</p>
   @enderror
   <button>Se connecter</button>
+
+  <div>
+    Vous n'avez pas encore de compte ? <a href="/signup">Créez vous un compte</a>
+  </div>
 </form>
