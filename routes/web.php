@@ -17,11 +17,12 @@ use App\Models\User;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+  $animes = DB::select("SELECT * FROM animes");
+  return view('welcome', ["animes" => $animes]);
 });
 
 Route::get('/login', function () {
-    return view('login');
+  return view('login');
 });
 
 Route::post('/login', function (Request $request) {
@@ -38,7 +39,7 @@ Route::post('/login', function (Request $request) {
 });
 
 Route::get('/signup', function () {
-    return view('signup');
+  return view('signup');
 });
 
 Route::post('signup', function (Request $request) {

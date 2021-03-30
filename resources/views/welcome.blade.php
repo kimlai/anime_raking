@@ -12,5 +12,16 @@
     @guest
       Guest
     @endguest
+
+    <main>
+      <ul>
+        @foreach($animes as $anime)
+          <li>
+            {{ $anime->title }}
+            <img alt="" src="/covers/{{ $anime->cover }}" />
+          </li>
+        @endforeach
+      </ul>
+    </main>
   </body>
 </html>
