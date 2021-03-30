@@ -40,7 +40,7 @@ Route::post('/login', function (Request $request) {
     "password" => "required",
   ]);
   if (Auth::attempt($validated)) {
-    return redirect('/');
+    return redirect()->intended('/');
   }
   return back()->withErrors([
     'username' => 'The provided credentials do not match our records.',
