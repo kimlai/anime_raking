@@ -122,6 +122,7 @@ nav button {
 main {
     max-width: 80ch;
     margin: 5rem auto;
+    padding: 1rem;
 }
 
 .anime-list {
@@ -192,8 +193,9 @@ article > * + * {
     flex-wrap: nowrap;
 }
 
-.anime p {
+article.anime {
     max-width: 65ch;
+    margin: 0 auto;
 }
 
 .signup h1,
