@@ -25,6 +25,11 @@ class DatabaseSeeder extends Seeder
         'cover' => 'titans.jpg',
       ]);
       DB::table('animes')->insert([
+        'title' => 'Lastman',
+        'description' => 'Richard Aldana, boxeur assez paresseux, doit prendre soin de la fille de son coach, assassiné par un ordre mystérieux.',
+        'cover' => 'lastman.png',
+      ]);
+      DB::table('animes')->insert([
         'title' => 'Cowboy Bebop',
         'description' => '2071. Spike Spiegel et Jet Black, chasseurs de primes fauchés, errent dans l\'espace au gré de leurs missions et dans une ambiance plutôt "Seventies".',
         'cover' => 'cowboy.webp',
