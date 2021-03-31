@@ -49,10 +49,20 @@ tables du projet. Pour faciliter cette tâche, Laravel utilise un système de
 [migrations](https://laravel.com/docs/8.x/migrations) qui automatisent ce
 processus.
 
-Pour lancer les migration, exécutez la commande suivante :
+Pour lancer les migrations, exécutez la commande suivante :
 
 ```
 php artisan migrate
+```
+
+### Seeds
+
+Pour pré-remplir la BDD avec des données prédéfinies, le projet utilise les
+[seeds](https://laravel.com/docs/8.x/seeding) de Laravel. Pour exécuter les
+"seeds", lancez la commande suivante :
+
+```
+php artisan db:seed
 ```
 
 ## Génération de la clé de chiffrement
@@ -63,6 +73,6 @@ Vous pouvez maintenant lancer le serveur de développement en ligne de commande
 php artisan serve
 ```
 
-Lorsque vos accéderez au site, Vous verrez une erreur Laravel, avec un bouton
-qui vous suggère de créer une clé. Appuyez sur ce bouton, puis relancer votre
-serveur de développement.
+Lorsque vos accéderez au site, vous verrez une erreur Laravel, avec un bouton
+qui vous suggère de créer une clé. Cliquez sur ce bouton pour générer la clé,
+puis relancer votre serveur de développement.
