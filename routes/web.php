@@ -19,9 +19,11 @@ use App\Http\Controllers\ReviewController;
 Route::get('/', [AnimeController::class, "showAll"]);
 Route::get('/anime/{id}', [AnimeController::class, "showOne"]);
 
-Route::get('/anime/{id}/new_review', [ReviewController::class, "newReview"]);
+Route::get('/anime/{id}/new_review', [ReviewController::class, "newReview"])
+->middleware('auth'); // redirection vers la page de login si pas authentifié
 
-Route::get('/login', [AuthenticationController::class, "loginForm"]);
+Route::get('/login', [AuthenticationController::class, "loginForm"])
+->name('login'); // on donne un nom à la route, qui sera utilisé par le middleware d'authentification
 Route::post('/login', [AuthenticationController::class, "attemptLogin"]);
 Route::get('/signup', [AuthenticationController::class, "signupForm"]);
 Route::post('/signup', [AuthenticationController::class, "register"]);

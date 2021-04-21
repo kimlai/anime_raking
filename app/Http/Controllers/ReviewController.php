@@ -17,11 +17,6 @@ class ReviewController
 {
   public function newReview()
   {
-    // si l'utilisateur n'est pas connecté, on le redirige vers la page de login
-    // on ne fait pas un `view("login")` mais bien une redirection pour changer l'url
-    if (!Auth::check()) {
-      return redirect('/login');
-    }
     // vue
     return view('new_review');
   }
